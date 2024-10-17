@@ -4,6 +4,7 @@ import { Photos } from "./pages/Photos/Photos";
 import { Suspense } from "react";
 import { App } from "./App";
 import { Task } from "./pages/Task/Task";
+import { Game } from "./pages/Game/Game";
 
 export const AppRouter = () =>
   createBrowserRouter([
@@ -25,6 +26,10 @@ export const AppRouter = () =>
         {
           path: "/task",
           element: <Task />,
+        },
+        {
+          path: "/game",
+          element: <Game />,
         },
       ],
     },
