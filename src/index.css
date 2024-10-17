@@ -16,4 +16,5 @@ body {
   height: 100%;
   padding: 8px;
   color: white;
+  overflow-y: scroll;
 }
