@@ -40,6 +40,8 @@ function App() {
   const setShouldGenerateHandler = () => {
     setShouldGenerate(true);
     setIsAnimateButton(false);
+    setCountColor(0);
+    setShouldSaveColor(false);
   };
 
   // const getPhotos = async () => {
@@ -1132,7 +1134,7 @@ function App() {
   useEffect(() => {
     if (countColor === 100) {
       setShouldGenerate(false);
-      setCountColor(0);
+
       setIsAnimateButton(true);
       setShouldSaveColor(true);
     }
@@ -1156,7 +1158,13 @@ function App() {
     <div className="wrapper">
       <div className="top-content">
         <h1>Не знаешь в какой цвет покрасить ноготки? Нажми на глазик 😘</h1>
-        <div style={{ background: color }} className="item"></div>
+        <div className="item-wrapper">
+          <div
+            style={{ background: color, width: `${countColor}%` }}
+            className="item"
+          ></div>
+          {countColor}%
+        </div>
         <button
           onClick={saveColorHandler}
           className={`shouldSaveColorButton ${shouldSaveColor ? "show" : ""}`}

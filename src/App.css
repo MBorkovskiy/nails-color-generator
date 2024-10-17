@@ -43,6 +43,13 @@ h2 {
   height: 30px;
 }
 
+.item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+}
+
 .item {
   display: flex;
   align-items: center;
