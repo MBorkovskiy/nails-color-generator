@@ -90,15 +90,16 @@ h2 {
   animation: 1s linear 1s infinite alternate grow;
 }
 
+.photo-galery-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 .x.mandatory-scroll-snapping {
   opacity: 0;
-  padding-top: 0px;
-  scroll-snap-type: x mandatory;
 
-  overflow: hidden;
-  display: flex;
+  scroll-snap-type: y mandatory;
   align-items: center;
-  gap: 15px;
   height: 0;
   transition: all ease-in-out 0.4s;
 }
@@ -106,15 +107,14 @@ h2 {
 .x.mandatory-scroll-snapping.show-photos {
   overflow: scroll;
   opacity: 1;
-  padding-top: 15px;
-  height: 560px;
+  height: 90vh;
 }
 
 .container > div {
   text-align: center;
   scroll-snap-align: center;
   flex: none;
-  width: 70%;
+  width: 100%;
 
   img {
     width: 100%;
