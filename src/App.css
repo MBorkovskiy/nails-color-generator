@@ -1,0 +1,36 @@
+h1 {
+  text-align: center;
+  font-size: 28px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 22px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.item {
+  width: 100px;
+  height: 100px;
+}
+.generate-button {
+  all: unset;
+  color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: rgb(255, 0, 128);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
