@@ -18,7 +18,7 @@ export const Header = () => {
         to="/task"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
-        Задачи
+        Занятия
       </NavLink>
     </header>
   );
