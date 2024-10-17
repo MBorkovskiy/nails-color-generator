@@ -1,11 +1,24 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import uuid from "react-uuid";
+import a from "./assets/photoGalery/1.jpg";
+import b from "./assets/photoGalery/2.jpg";
+import c from "./assets/photoGalery/3.jpg";
+import d from "./assets/photoGalery/4.jpg";
+import e from "./assets/photoGalery/5.jpg";
+import f from "./assets/photoGalery/6.jpg";
+import g from "./assets/photoGalery/7.jpg";
+import i from "./assets/photoGalery/8.jpg";
+import j from "./assets/photoGalery/9.jpg";
+import k from "./assets/photoGalery/10.jpg";
+import l from "./assets/photoGalery/11.jpg";
 
 interface ISavedColors {
   color: string;
   id: string;
 }
+
+const photoGalery = [a, b, c, d, e, f, g, i, j, k, l];
 
 function App() {
   const [color, setColor] = useState("rgb(255, 0, 0)");
@@ -15,6 +28,7 @@ function App() {
   const [shouldGenerate, setShouldGenerate] = useState(false);
   const [isAnimateButton, setIsAnimateButton] = useState(true);
   const [savedColors, setSavedColors] = useState<ISavedColors[]>([]);
+  const [showPhotos, setShowPhotos] = useState(false);
 
   const generateColor = () => {
     const r = Math.floor(Math.random() * 255);
@@ -106,6 +120,22 @@ function App() {
           ) : (
             <p>Пупс еще не сохранял цвета 😢 </p>
           )}
+        </div>
+      </div>
+      <div className="photo-galery-wrapper">
+        <h2 onClick={() => setShowPhotos((prev) => !prev)}>{`${
+          showPhotos ? "Скрыть" : "Показать"
+        } галерею фото`}</h2>
+        <div
+          className={`container x mandatory-scroll-snapping ${
+            showPhotos ? "show-photos" : ""
+          }`}
+        >
+          {photoGalery.map((img) => (
+            <div>
+              <img src={img} alt="image" />
+            </div>
+          ))}
         </div>
       </div>
     </div>

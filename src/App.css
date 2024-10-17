@@ -1,10 +1,8 @@
 h1 {
-  text-align: center;
   font-size: 28px;
 }
 
 h2 {
-  text-align: center;
   font-size: 22px;
 }
 .wrapper {
@@ -84,4 +82,35 @@ h2 {
 
 .animation {
   animation: 1s linear 1s infinite alternate grow;
+}
+
+.x.mandatory-scroll-snapping {
+  opacity: 0;
+  padding-top: 0px;
+  scroll-snap-type: x mandatory;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 0;
+  transition: all ease-in-out 0.4s;
+}
+
+.x.mandatory-scroll-snapping.show-photos {
+  opacity: 1;
+  padding-top: 15px;
+  height: 560px;
+}
+
+.container > div {
+  text-align: center;
+  scroll-snap-align: center;
+  flex: none;
+  width: 70%;
+
+  img {
+    width: 100%;
+    border-radius: 16px;
+  }
 }
