@@ -3,7 +3,6 @@ import "./game.css";
 
 export const Game = () => {
   const [counter, setCounter] = useState(0);
-  const [clicked, setClicked] = useState(false);
   const [autoClick, setAutoClick] = useState(false);
 
   const tapHandler = () => {
