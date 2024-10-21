@@ -13,9 +13,22 @@
   background-size: cover;
   background-position: 50% 10%;
   transform: scale(100%);
+  transition: all ease-in-out 0.1s;
 }
 
-.clicked {
-  transform: scale(95%);
-  filter: blur(4px);
+.tap-item:active {
+  transform: scale(90%);
+}
+
+.switch {
+  all: unset;
+  background-color: blueviolet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  border-radius: 16px;
+  padding: 8px;
+  width: 50%;
 }

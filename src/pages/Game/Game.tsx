@@ -4,18 +4,27 @@ import "./game.css";
 export const Game = () => {
   const [counter, setCounter] = useState(0);
   const [clicked, setClicked] = useState(false);
+  const [autoClick, setAutoClick] = useState(false);
 
   const tapHandler = () => {
-    setClicked(true);
     setCounter((prev) => {
       const result = prev + 1;
       localStorage.setItem("points", `${result}`);
       return result;
     });
-    setTimeout(() => {
-      setClicked(false);
-    }, 0);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (autoClick) {
+        setCounter((prev) => {
+          const result = prev + 1;
+          localStorage.setItem("points", `${result}`);
+          return result;
+        });
+      }
+    }, 200);
+  }, [counter, autoClick]);
 
   useEffect(() => {
     if (localStorage.getItem("points") !== null) {
@@ -26,12 +35,11 @@ export const Game = () => {
   return (
     <div className="game-wrapper">
       <h1>Тапай на пупса и зарабатывай миллион</h1>
-
-      <div
-        className={`tap-item ${clicked ? "clicked" : ""}`}
-        onClick={tapHandler}
-      ></div>
+      <div className="tap-item" onClick={tapHandler}></div>
       <div>{`${counter} очка(ов)`}</div>
+      <button className="switch" onClick={() => setAutoClick((prev) => !prev)}>
+        {`${autoClick ? "Выключить" : "Включить"} автокликер`}
+      </button>
     </div>
   );
 };
