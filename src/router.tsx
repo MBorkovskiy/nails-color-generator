@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { App } from "./App";
 import { Task } from "./pages/Task/Task";
 import { Game } from "./pages/Game/Game";
+import { Calendar } from "./pages/Calendar/Calendar";
 
 export const AppRouter = () =>
   createBrowserRouter([
@@ -30,6 +31,10 @@ export const AppRouter = () =>
         {
           path: "/game",
           element: <Game />,
+        },
+        {
+          path: "/calendar",
+          element: <Calendar />,
         },
       ],
     },

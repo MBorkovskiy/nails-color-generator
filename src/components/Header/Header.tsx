@@ -25,6 +25,12 @@ export const Header = () => {
       >
         Игра
       </NavLink>
+      <NavLink
+        to="/calendar"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Календарь
+      </NavLink>
     </header>
   );
 };
