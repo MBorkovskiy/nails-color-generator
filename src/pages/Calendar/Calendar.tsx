@@ -29,7 +29,7 @@ const giftsPlace = [
   { day: 30, place: "Где-то" },
 ];
 
-const day = new Date().getDay();
+const day = new Date().getDate();
 const month = new Date().getMonth();
 const emptyGift =
   "На сегодня для пупсика нету подарка 😔, попробуй заглянуть завтра ❤️";
@@ -39,7 +39,7 @@ export const Calendar = () => {
   const [place, setPlace] = useState(emptyGift);
 
   useEffect(() => {
-    if (month === 10) {
+    if (month === 11) {
       const findPlace = giftsPlace.find((gift) => gift.day === day);
       if (findPlace) {
         setPlace(findPlace.place);
